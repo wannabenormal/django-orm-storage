@@ -42,6 +42,6 @@ class Visit(models.Model):
         return time_end - localtime(self.entered_at)
 
     def is_visit_long(self, max_minutes=60):
-        visit_minutes = self.get_duration().total_seconds() % 3600 // 60
+        visit_minutes = self.get_duration().total_seconds() // 60
 
         return visit_minutes >= max_minutes
