@@ -1,4 +1,15 @@
 from django.db import models
+from django.utils.timezone import localtime
+
+
+def format_duration(duration):
+    remaining_seconds = duration.total_seconds()
+    hours = int(remaining_seconds // 3600)
+    remaining_seconds = remaining_seconds - hours * 3600
+    minutes = int(remaining_seconds // 60)
+    seconds = int(remaining_seconds - minutes * 60)
+
+    return '{:02}:{:02}:{:02}'.format(hours, minutes, seconds)
 
 
 class Passcard(models.Model):
@@ -25,3 +36,12 @@ class Visit(models.Model):
             entered=self.entered_at,
             leaved= 'leaved at ' + str(self.leaved_at) if self.leaved_at else 'not leaved'
         )
+
+    def get_duration(self):
+        time_end = localtime(self.leaved_at) if self.leaved_at else localtime()
+        return time_end - localtime(self.entered_at)
+
+    def is_visit_long(self, max_minutes=60):
+        visit_minutes = self.get_duration().total_seconds() % 3600 // 60
+
+        return visit_minutes >= max_minutes
