@@ -38,7 +38,7 @@ class Visit(models.Model):
         )
 
     def get_duration(self):
-        time_end = localtime(self.leaved_at) if self.leaved_at else localtime()
+        time_end = localtime(self.leaved_at)
         return time_end - localtime(self.entered_at)
 
     def is_visit_long(self, max_minutes=60):
