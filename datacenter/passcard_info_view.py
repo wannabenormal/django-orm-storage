@@ -8,8 +8,6 @@ def passcard_info_view(request, passcode):
     passcard = Passcard.objects.get(passcode=passcode)
     visits = passcard.visit_set.all()
 
-    # Программируем здесь
-
     this_passcard_visits = []
 
     for visit in visits:
