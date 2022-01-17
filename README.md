@@ -14,6 +14,7 @@ DB_PORT=<YOUR DATABASE PORT>
 DB_NAME=<YOUR DATABASE NAME>
 DB_USER=<YOUR DATABASE USER>
 DB_PASSWORD=<YOUR DATABASE PASSWORD>
+DEBUG=<True or False>
 ```
 4. Run the script with `python` or `python3`:
 ```
