@@ -16,7 +16,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = strtobool(os.getenv('DEBUG')) if os.getenv('DEBUG') else False
 
-ROOT_URLCONF = "project.urls"
+ROOT_URLCONF = 'project.urls'
 
 ALLOWED_HOSTS = ['*']
 
