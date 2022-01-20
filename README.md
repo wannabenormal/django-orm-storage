@@ -12,6 +12,7 @@ pip install -r requirements.txt
 SECRET_KEY=<YOUR DJANGO SECRET KEY>
 DB_URL=<YOUR DB URL>
 DEBUG=<True or False>
+ALLOWED_HOSTS=<localhost, 127.0.0.1, etc>
 ```
 4. Run the script with `python` or `python3`:
 ```

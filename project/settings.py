@@ -18,7 +18,11 @@ DEBUG = strtobool(os.getenv('DEBUG')) if os.getenv('DEBUG') else False
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = (
+    os.getenv('ALLOWED_HOSTS').split(', ')
+    if os.getenv('ALLOWED_HOSTS') else
+    []
+)
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
