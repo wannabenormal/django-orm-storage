@@ -10,11 +10,7 @@ pip install -r requirements.txt
 3. Create a `.env` file:
 ```
 SECRET_KEY=<YOUR DJANGO SECRET KEY>
-DB_HOST=<YOUR DATABASE HOST>
-DB_PORT=<YOUR DATABASE PORT>
-DB_NAME=<YOUR DATABASE NAME>
-DB_USER=<YOUR DATABASE USER>
-DB_PASSWORD=<YOUR DATABASE PASSWORD>
+DB_URL=<YOUR DB URL>
 DEBUG=<True or False>
 ```
 4. Run the script with `python` or `python3`:
